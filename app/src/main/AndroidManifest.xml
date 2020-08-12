@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.todolist">
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:name=".ShareClassess.ConnectionDBApp"
+        android:allowBackup="true"
+        android:icon="@drawable/todolisticon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/todolisticon"
+        android:supportsRtl="true"
+        android:theme="@style/DakTheme">
+
+        <service
+            android:name=".ShareClassess.JobNotificationService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".AddJob.AddJobUI"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/DakTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
